@@ -1,0 +1,38 @@
+<project default="compile">
+
+	<path id="classpath.test">
+		<pathelement location="junit-4.12.jar"/>
+		<pathelement location="hamcrest-core-1.3.jar"/>
+		<pathelement location="."/>
+	</path>
+
+	<target name="clean">
+		<delete>
+			<fileset dir=".">
+				<include name="*.class"/>
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="compile">
+		<javac srcdir="." destdir="." includeantruntime="false"/>
+	</target>
+
+	<target name="run">
+		<java classname="CircleRun" fork="true"></java>
+	</target>
+
+	<target name="test" depends="compile">
+		<junit printsummary="on" haltonfailure="yes" fork="true">
+			<classpath>
+				<path refid="classpath.test"/>
+				<pathelement location="."/>
+			</classpath>
+			<formatter type="brief" usefile="false"/>
+			<batchtest>
+				<fileset dir="." includes="*Test.java"/>
+			</batchtest>
+		</junit>
+	</target>
+
+</project>
