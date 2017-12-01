@@ -43,9 +43,10 @@ public double scale(double factor)
 **/
 public Point moveBy(double xOffset, double yOffset)
 {
-   center.x = center.x + xOffset;
-   center.y = center.y + xOffset;
-   return center;
+	center.x = center.x + xOffset;
+   	//center.y = center.y + xOffset;//incorrect
+   	center.y = center.y + yOffset;//correct
+	return center;
 }
 
 /**

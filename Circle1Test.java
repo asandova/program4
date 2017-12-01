@@ -44,11 +44,16 @@ public void teardown()
 public void simpleMove()
 {
    Point p;
-   System.out.println("Running test simpleMove.");
    p = circle1.moveBy(1,1);
    Assert.assertTrue(p.x == 2 && p.y == 3);
 }
 
+@Test
+public void simpleMove1(){
+	Point p;
+	p = circle1.moveBy(1,3);
+	Assert.assertTrue(p.x == 2 && p.y == 5);
+}
 // 
 // Test a simple negative move
 //

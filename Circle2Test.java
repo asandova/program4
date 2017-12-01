@@ -40,7 +40,7 @@ public void teardown()
 //
 @Test
 public void simpleStruct(){
-	Circle t = new Circle2(4,1,1);
+	Circle2 t = new Circle2(4,1,1);
 	Assert.assertTrue( t.center.x == 4 && t.center.y == 1 && t.radius == 1);
 }
 
